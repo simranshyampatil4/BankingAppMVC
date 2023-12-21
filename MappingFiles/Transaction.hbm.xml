@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="BankingAppMVC" namespace="BankingAppMVC.Models">
+	<class name="Transaction">
+		<id name="Id">
+			<generator class="native"/>
+		</id>
+		<property name="TransactionType"/>
+		<property name="Amount"/>
+		<property name="Date"/>
+		<property name="ToAccountNumber"/>
+		<property name="FromAccountNumber"/>
+		<many-to-one name="Account" column="AccountId" cascade="save-update"/>
+	</class>
+</hibernate-mapping>
+
